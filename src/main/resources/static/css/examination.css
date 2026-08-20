@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.btn,
+.view-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    background-color: #2563eb;
+    color: white;
+}
+
+.view-btn {
+    background-color: #16a34a;
+    color: white;
+}
+
+.exam-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.exam-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.exam-card h2 {
+    margin-top: 0;
+}
+
+.empty-message {
+    text-align: center;
+    margin-top: 40px;
+    color: #666;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+h1 {
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #374151;
+}
+
+h3 {
+    color: #111827;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.question {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.option {
+    display: block;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background-color: #f0f4ff;
+}
+
+.option input {
+    margin-right: 10px;
+}
+
+button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.result {
+    background-color: white;
+    text-align: center;
+    padding: 40px;
+    margin: 60px auto;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.score {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 25px 0;
+}
+.certificate-result {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #f4f6f8;
+}
+
+.certificate-result h2 {
+    margin-bottom: 20px;
+}
+
+.certificate-result p {
+    margin: 10px 0;
+}

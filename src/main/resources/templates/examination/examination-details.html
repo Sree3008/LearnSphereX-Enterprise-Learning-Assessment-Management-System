@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Examination Details</title>
+
+    <link rel="stylesheet" th:href="@{/css/examination.css}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 th:text="${examination.title}">
+        Examination Title
+    </h1>
+
+    <p th:text="${examination.description}">
+        Description
+    </p>
+
+    <h2>Questions</h2>
+
+    <div th:if="${#lists.isEmpty(questions)}">
+        <p>No questions available.</p>
+    </div>
+
+    <form th:action="@{/examination-page/{id}/submit(id=${examination.id})}"
+          method="post">
+
+        <div th:each="question, stat : ${questions}"
+             class="question">
+
+            <h3>
+                <span th:text="${stat.count}">1</span>.
+                <span th:text="${question.questionText}">
+                    Question
+                </span>
+            </h3>
+
+            <label class="option">
+                <input type="radio"
+                       th:name="'question_' + ${question.id}"
+                       value="A"
+                       required>
+                A:
+                <span th:text="${question.optionA}"></span>
+            </label>
+
+            <label class="option">
+                <input type="radio"
+                       th:name="'question_' + ${question.id}"
+                       value="B">
+                B:
+                <span th:text="${question.optionB}"></span>
+            </label>
+
+            <label class="option">
+                <input type="radio"
+                       th:name="'question_' + ${question.id}"
+                       value="C">
+                C:
+                <span th:text="${question.optionC}"></span>
+            </label>
+
+            <label class="option">
+                <input type="radio"
+                       th:name="'question_' + ${question.id}"
+                       value="D">
+                D:
+                <span th:text="${question.optionD}"></span>
+            </label>
+
+        </div>
+
+        <button type="submit">
+            Submit Examination
+        </button>
+
+    </form>
+
+    <a class="back-link" href="/examination-page">
+        Back to Examinations
+    </a>
+
+</div>
+
+</body>
+
+</html>

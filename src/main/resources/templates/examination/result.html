@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Examination Result</title>
+
+    <link rel="stylesheet" th:href="@{/css/examination.css}">
+</head>
+
+<body>
+
+<div class="result">
+
+    <h1>Examination Result</h1>
+
+    <div class="score">
+
+        Your Score:
+
+        <span th:text="${score}">
+            0
+        </span>
+
+        /
+
+        <span th:text="${totalQuestions}">
+            0
+        </span>
+
+    </div>
+
+    <p>
+        Congratulations! Your examination has been submitted.
+    </p>
+
+    <a href="/examination-page">
+        Back to Examinations
+    </a>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+
+/* =================================
+   GENERATION PAGE
+   ================================= */
+
+.container {
+    width: 90%;
+    max-width: 650px;
+    margin: 80px auto;
+}
+
+.form-section {
+    background: #ffffff;
+    padding: 45px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-section h1 {
+    text-align: center;
+    color: #1e3a8a;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.form-section h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.form-section p {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 35px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+form input {
+    padding: 13px;
+    margin-bottom: 22px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+form button {
+    padding: 14px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #1d4ed8;
+}
+
+
+/* =================================
+   CERTIFICATE PAGE
+   ================================= */
+
+.certificate-page {
+    min-height: 100vh;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.certificate-border {
+    width: 100%;
+    max-width: 1000px;
+    min-height: 680px;
+    background: white;
+    border: 12px solid #1e3a8a;
+    padding: 55px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Header */
+
+.certificate-header {
+    text-align: center;
+}
+
+.certificate-header h1 {
+    color: #1e3a8a;
+    font-size: 38px;
+    letter-spacing: 3px;
+}
+
+.certificate-header p {
+    color: #6b7280;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+
+/* Certificate title */
+
+.certificate-title {
+    text-align: center;
+    margin-top: 55px;
+}
+
+.small-title {
+    color: #6b7280;
+    font-size: 15px;
+    letter-spacing: 5px;
+}
+
+.certificate-title h2 {
+    color: #1e3a8a;
+    font-size: 48px;
+    letter-spacing: 6px;
+    margin: 10px 0 20px;
+}
+
+.certificate-title p:last-child {
+    color: #4b5563;
+    font-size: 16px;
+}
+
+
+/* Student */
+
+.student-name {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.student-name > span {
+    font-size: 30px;
+    font-weight: bold;
+    color: #111827;
+    border-bottom: 2px solid #1e3a8a;
+    padding: 0 30px 8px;
+}
+
+
+/* Course */
+
+.certificate-message {
+    text-align: center;
+}
+
+.certificate-message p {
+    color: #4b5563;
+}
+
+.certificate-message h3 {
+    margin-top: 12px;
+    color: #1e3a8a;
+    font-size: 22px;
+}
+
+
+/* Details */
+
+.certificate-details {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.detail-item {
+    text-align: center;
+}
+
+.detail-label {
+    display: block;
+    color: #6b7280;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.detail-value {
+    display: block;
+    margin-top: 7px;
+    color: #111827;
+    font-weight: bold;
+}
+
+
+/* Footer */
+
+.certificate-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 55px;
+}
+
+.signature {
+    text-align: center;
+}
+
+.signature-line {
+    width: 180px;
+    border-top: 1px solid #374151;
+    margin-bottom: 8px;
+}
+
+.signature p {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+
+/* Seal */
+
+.certificate-seal {
+    text-align: center;
+}
+
+.seal-circle {
+    width: 70px;
+    height: 70px;
+    border: 3px solid #1e3a8a;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1e3a8a;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.certificate-seal p {
+    color: #6b7280;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+
+/* Print button */
+
+.print-section {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.print-section button {
+    padding: 12px 25px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.print-section button:hover {
+    background: #1d4ed8;
+}
+
+
+/* =================================
+   PRINT
+   ================================= */
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    .certificate-page {
+        padding: 0;
+        min-height: auto;
+    }
+
+    .certificate-border {
+        max-width: none;
+        width: 100%;
+        min-height: 95vh;
+        box-shadow: none;
+    }
+
+    .print-section {
+        display: none;
+    }
+}
+
+
+/* =================================
+   MOBILE
+   ================================= */
+
+@media (max-width: 700px) {
+
+    .certificate-page {
+        padding: 15px;
+    }
+
+    .certificate-border {
+        padding: 30px 20px;
+        border-width: 7px;
+    }
+
+    .certificate-title h2 {
+        font-size: 34px;
+    }
+
+    .student-name > span {
+        font-size: 22px;
+    }
+
+    .certificate-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

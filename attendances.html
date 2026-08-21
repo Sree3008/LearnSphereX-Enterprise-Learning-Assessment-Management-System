@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance | LearnSphereX</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/attendance.css}">
+
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                L
+            </div>
+
+            <div>
+
+                <strong>LearnSphereX</strong>
+
+                <span>
+                    Learning & Evaluation
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="nav">
+
+            <div class="nav-label">
+                MAIN
+            </div>
+
+
+            <a href="/batches"
+               class="nav-item">
+
+                <span class="nav-icon">▣</span>
+
+                Batches
+
+            </a>
+
+
+            <a href="/attendance"
+               class="nav-item active">
+
+                <span class="nav-icon">◉</span>
+
+                Attendance
+
+            </a>
+
+
+            <div class="nav-label">
+                MANAGEMENT
+            </div>
+
+
+            <a href="#"
+               class="nav-item">
+
+                <span class="nav-icon">▤</span>
+
+                Courses
+
+            </a>
+
+
+            <a href="#"
+               class="nav-item">
+
+                <span class="nav-icon">♙</span>
+
+                Students
+
+            </a>
+
+
+            <a href="#"
+               class="nav-item">
+
+                <span class="nav-icon">🔔</span>
+
+                Notifications
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <div class="mini-avatar">
+                A
+            </div>
+
+            <div>
+
+                <strong>Admin</strong>
+
+                <span>
+                    Management Portal
+                </span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-area">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+
+            <div>
+
+                <span class="eyebrow">
+                    ATTENDANCE MANAGEMENT
+                </span>
+
+                <h1>
+                    Attendance Dashboard
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <span class="status-dot"></span>
+
+                System Online
+
+                <div class="top-avatar">
+                    A
+                </div>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- CONTENT -->
+
+        <section class="page-content">
+
+
+            <!-- PAGE TITLE -->
+
+            <div class="page-title">
+
+
+                <div>
+
+                    <h2>
+                        Attendance
+                    </h2>
+
+                    <p>
+                        Manage and track student attendance.
+                    </p>
+
+                </div>
+
+
+                <a href="/attendance/new"
+                   class="btn primary">
+
+                    + Mark Attendance
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- TABLE -->
+
+            <div class="panel">
+
+
+                <div class="table-wrap">
+
+
+                    <table>
+
+
+                        <thead>
+
+                        <tr>
+
+                            <th>
+                                ID
+                            </th>
+
+                            <th>
+                                Batch
+                            </th>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Attendance Date
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+
+                        </thead>
+
+
+
+                        <tbody>
+
+
+                        <tr th:each="attendance : ${attendances}">
+
+
+                            <td>
+
+                                <strong
+                                    th:text="${attendance.id}">
+                                    1
+                                </strong>
+
+                            </td>
+
+
+                            <td
+                                th:text="${attendance.batchId}">
+                                1
+                            </td>
+
+
+                            <td
+                                th:text="${attendance.studentId}">
+                                1
+                            </td>
+
+
+                            <td
+                                th:text="${attendance.attendanceDate}">
+                                2026-08-20
+                            </td>
+
+
+                            <td>
+
+                                <span class="pill"
+                                      th:classappend="${attendance.status.name() == 'ABSENT'} ? ' absent' :
+                                                      (${attendance.status.name() == 'LATE'} ? ' late' : '')"
+                                      th:text="${attendance.status}">
+
+                                    PRESENT
+
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <div class="actions">
+
+
+                                    <a th:href="@{/attendance/{id}(id=${attendance.id})}"
+                                       class="btn secondary small">
+
+                                        View
+
+                                    </a>
+
+
+                                    <a th:href="@{/attendance/{id}/edit(id=${attendance.id})}"
+                                       class="btn secondary small">
+
+                                        Edit
+
+                                    </a>
+
+
+                                    <form th:action="@{/attendance/{id}/delete(id=${attendance.id})}"
+                                          method="post"
+                                          style="display:inline;">
+
+                                        <button type="submit"
+                                                class="btn danger small"
+                                                onclick="return confirm('Are you sure you want to delete this attendance?');">
+
+                                            Delete
+
+                                        </button>
+
+                                    </form>
+
+
+                                </div>
+
+                            </td>
+
+
+                        </tr>
+
+
+
+                        <!-- NO RECORDS -->
+
+                        <tr th:if="${#lists.isEmpty(attendances)}">
+
+                            <td colspan="6"
+                                class="empty">
+
+                                No attendance records found.
+
+                            </td>
+
+                        </tr>
+
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+
+            <span>
+                LearnSphereX Attendance Management
+            </span>
+
+            <span>
+                Spring Boot · JPA · Thymeleaf
+            </span>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+</body>
+
+</html>

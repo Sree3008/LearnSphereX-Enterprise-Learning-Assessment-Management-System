@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Details</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/attendance.css}">
+
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                L
+            </div>
+
+            <div>
+
+                <strong>LearnSphereX</strong>
+
+                <span>
+                    TRAINING MANAGEMENT
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="nav">
+
+            <div class="nav-label">
+                MAIN MENU
+            </div>
+
+            <a href="/batches"
+               class="nav-item">
+
+                📚 Batch
+
+            </a>
+
+            <a href="/attendance"
+               class="nav-item">
+
+                📋 Attendance
+
+            </a>
+
+            <a href="#"
+               class="nav-item">
+
+                🎓 Courses
+
+            </a>
+
+            <a href="#"
+               class="nav-item">
+
+                👨‍🎓 Students
+
+            </a>
+
+            <a href="#"
+               class="nav-item">
+
+                🔔 Notifications
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="main-area">
+
+
+        <header class="topbar">
+
+            <div>
+
+                <span class="eyebrow">
+                    ATTENDANCE
+                </span>
+
+                <h1>
+                    Attendance Details
+                </h1>
+
+            </div>
+
+        </header>
+
+
+        <section class="page-content">
+
+
+            <a href="/attendance"
+               class="back-link">
+
+                ← Back to Attendance
+
+            </a>
+
+
+            <div class="detail-card">
+
+                <h3>
+                    Attendance Information
+                </h3>
+
+
+                <div class="detail-grid">
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Attendance ID
+                        </span>
+
+                        <strong th:text="${attendance.id}">
+                            1
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Batch ID
+                        </span>
+
+                        <strong th:text="${attendance.batchId}">
+                            1
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Student ID
+                        </span>
+
+                        <strong th:text="${attendance.studentId}">
+                            1
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Date
+                        </span>
+
+                        <strong th:text="${attendance.attendanceDate}">
+                            2026-08-20
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Status
+                        </span>
+
+                        <strong th:text="${attendance.status}">
+                            PRESENT
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <footer class="footer">
+
+            <span>
+                LearnSphereX
+            </span>
+
+            <span>
+                Attendance Management
+            </span>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+</body>
+
+</html>

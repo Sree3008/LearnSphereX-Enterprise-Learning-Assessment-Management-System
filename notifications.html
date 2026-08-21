@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Notifications | LearnSphereX</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/notification.css}">
+
+</head>
+
+<body>
+
+<div class="notification-container">
+
+    <header class="notification-header">
+
+        <div>
+
+            <p class="module-label">
+                NOTIFICATION MANAGEMENT
+            </p>
+
+            <h1>
+                Notifications
+            </h1>
+
+            <p class="subtitle">
+                Stay updated with important system information.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <main class="notification-content">
+
+
+        <div class="notification-list">
+
+
+            <div
+                th:each="notification : ${notifications}"
+                class="notification-card">
+
+
+                <div class="notification-icon">
+
+                    <span
+                        th:if="${notification.type == 'BATCH_ANNOUNCEMENT'}">
+                        📚
+                    </span>
+
+                    <span
+                        th:if="${notification.type == 'LOW_ATTENDANCE'}">
+                        ⚠️
+                    </span>
+
+                    <span
+                        th:if="${notification.type == 'ASSIGNMENT_DEADLINE'}">
+                        📝
+                    </span>
+
+                    <span
+                        th:if="${notification.type == 'EXAM_SCHEDULED'}">
+                        🧪
+                    </span>
+
+                    <span
+                        th:if="${notification.type == 'EXAM_RESULT'}">
+                        📊
+                    </span>
+
+                    <span
+                        th:if="${notification.type == 'PAYMENT_DUE'}">
+                        💳
+                    </span>
+
+                    <span
+                        th:if="${notification.type == 'CERTIFICATE_GENERATED'}">
+                        🏆
+                    </span>
+
+                    <span
+                        th:if="${notification.type == 'PASSWORD_RESET'}">
+                        🔐
+                    </span>
+
+                </div>
+
+
+                <div class="notification-body">
+
+                    <div class="notification-top">
+
+                        <h3
+                            th:text="${notification.title}">
+                            Notification Title
+                        </h3>
+
+                        <span
+                            th:if="${notification.readStatus}"
+                            class="read-badge">
+                            READ
+                        </span>
+
+                        <span
+                            th:unless="${notification.readStatus}"
+                            class="unread-badge">
+                            NEW
+                        </span>
+
+                    </div>
+
+
+                    <p
+                        th:text="${notification.message}">
+                        Notification message
+                    </p>
+
+
+                    <div class="notification-meta">
+
+                        <span
+                            th:text="${notification.type}">
+                            NOTIFICATION
+                        </span>
+
+                        <span
+                            th:text="${notification.createdAt}">
+                            2026-08-20
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                th:if="${#lists.isEmpty(notifications)}"
+                class="empty-notifications">
+
+                <div class="empty-icon">
+                    🔔
+                </div>
+
+                <h2>
+                    No notifications
+                </h2>
+
+                <p>
+                    You're all caught up.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>

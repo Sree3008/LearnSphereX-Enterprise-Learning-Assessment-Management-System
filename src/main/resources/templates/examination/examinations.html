@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Examinations</title>
+
+    <link rel="stylesheet" th:href="@{/css/examination.css}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Available Examinations</h1>
+
+    <div th:if="${#lists.isEmpty(examinations)}">
+        <p>No examinations available.</p>
+    </div>
+
+    <div th:each="exam : ${examinations}" class="card">
+
+        <h2 th:text="${exam.title}">
+            Examination Title
+        </h2>
+
+        <p th:text="${exam.description}">
+            Description
+        </p>
+
+        <a th:href="@{/examination-page/{id}(id=${exam.id})}">
+            View Examination
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

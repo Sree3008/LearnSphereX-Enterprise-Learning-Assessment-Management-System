@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>LearnSphereX - Certificate</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/certificate.css}">
+
+</head>
+
+<body>
+
+<div class="certificate-page">
+
+    <div class="certificate-border">
+
+        <!-- Header -->
+
+        <div class="certificate-header">
+
+            <h1>LearnSphereX</h1>
+
+            <p>
+                Enterprise Learning and Assessment
+                Management System
+            </p>
+
+        </div>
+
+
+        <!-- Title -->
+
+        <div class="certificate-title">
+
+            <p class="small-title">
+                CERTIFICATE OF
+            </p>
+
+            <h2>COMPLETION</h2>
+
+            <p>
+                This certificate is proudly presented to
+            </p>
+
+        </div>
+
+
+        <!-- Student -->
+
+        <div class="student-name">
+
+            <span>
+                Student ID:
+                <span th:text="${certificate.studentId}">
+                    1
+                </span>
+            </span>
+
+        </div>
+
+
+        <!-- Course -->
+
+        <div class="certificate-message">
+
+            <p>
+                for successfully completing
+            </p>
+
+            <h3>
+
+                Course ID:
+
+                <span th:text="${certificate.courseId}">
+                    1
+                </span>
+
+            </h3>
+
+        </div>
+
+
+        <!-- Details -->
+
+        <div class="certificate-details">
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Certificate Number
+                </span>
+
+                <span class="detail-value"
+                      th:text="${certificate.certificateNumber}">
+                    CERT-XXXXXXXX
+                </span>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Grade
+                </span>
+
+                <span class="detail-value"
+                      th:text="${certificate.grade}">
+                    A
+                </span>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Issue Date
+                </span>
+
+                <span class="detail-value"
+                      th:text="${certificate.issueDate}">
+                    2026-08-20
+                </span>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Status
+                </span>
+
+                <span class="detail-value"
+                      th:text="${certificate.status}">
+                    GENERATED
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer -->
+
+        <div class="certificate-footer">
+
+            <div class="signature">
+
+                <div class="signature-line"></div>
+
+                <p>
+                    Authorized Signature
+                </p>
+
+            </div>
+
+
+            <div class="certificate-seal">
+
+                <div class="seal-circle">
+                    LX
+                </div>
+
+                <p>
+                    LearnSphereX
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Print Button -->
+
+        <div class="print-section">
+
+            <button onclick="window.print()">
+                Print Certificate
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

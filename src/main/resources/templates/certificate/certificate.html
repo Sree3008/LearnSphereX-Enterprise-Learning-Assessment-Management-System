@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>LearnSphereX - Generate Certificate</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/certificate.css}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="form-section">
+
+        <h1>LearnSphereX</h1>
+
+        <h2>Generate Certificate</h2>
+
+        <p>
+            Generate your course completion certificate
+        </p>
+
+        <form th:action="@{/certificate/generate}"
+              th:object="${certificateRequest}"
+              method="post">
+
+            <label for="studentId">
+                Student ID
+            </label>
+
+            <input type="number"
+                   id="studentId"
+                   th:field="*{studentId}"
+                   placeholder="Enter Student ID"
+                   required>
+
+            <label for="courseId">
+                Course ID
+            </label>
+
+            <input type="number"
+                   id="courseId"
+                   th:field="*{courseId}"
+                   placeholder="Enter Course ID"
+                   required>
+
+            <button type="submit">
+                Generate Certificate
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
